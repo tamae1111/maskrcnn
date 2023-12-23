@@ -1,0 +1,363 @@
+## cocoの方は以下のような形だった
+keyとしては、
+"image/filename"、"image/id"、"objects/area"、"objects/bbox"、"objects/id"、"objects/is_crowd"、"objects/label"
+の7種類が格納されてい
+feature {
+    key: "image/filename"
+    value {
+      bytes_list {
+        value: "000000460139.jpg"
+      }
+    }
+  }
+  feature {
+    key: "image/id"
+    value {
+      int64_list {
+        value: 460139
+      }
+    }
+  }
+  feature {
+    key: "objects/area"
+    value {
+      int64_list {
+        value: 17821
+        value: 16942
+        value: 4344
+      }
+    }
+  }
+  feature {
+    key: "objects/bbox"
+    value {
+      float_list {
+        value: 0.5438095331192017
+        value: 0.1346406191587448
+        value: 0.9865151643753052
+        value: 0.33742186427116394
+        value: 0.5070779323577881
+        value: 0.5178750157356262
+        value: 0.8044804930686951
+        value: 0.8911250233650208
+        value: 0.326493501663208
+        value: 0.3697187602519989
+        value: 0.6520346403121948
+        value: 0.44318750500679016
+      }
+    }
+  }
+  feature {
+    key: "objects/id"
+    value {
+      int64_list {
+        value: 152282
+        value: 155195
+        value: 185150
+      }
+    }
+  }
+  feature {
+    key: "objects/is_crowd"
+    value {
+      int64_list {
+        value: 0
+        value: 0
+        value: 0
+      }
+    }
+  }
+  feature {
+    key: "objects/label"
+    value {
+      int64_list {
+        value: 3
+        value: 3
+        value: 0
+      }
+    }
+  }
+
+================================================================
+
+### createdの方は以下のような形だった  
+keyとしては以下が格納
+"image/filename","image/format","image/height","image/key/sha256","image/object/bbox/xmax"."image/object/bbox/xmin","image/object/bbox/ymax","image/object/bbox/ymin","image/object/class/label","image/object/class/text","image/source_id","image/width"
+
+feature {
+    key: "image/filename"
+    value {
+      bytes_list {
+        value: "20MP_20221201143527.jpg"
+      }
+    }
+  }
+  feature {
+    key: "image/format"
+    value {
+      bytes_list {
+        value: "jpeg"
+      }
+    }
+  }
+  feature {
+    key: "image/height"
+    value {
+      int64_list {
+        value: 3648
+      }
+    }
+  }
+  feature {
+    key: "image/key/sha256"
+    value {
+      bytes_list {
+        value: "9d8bc00e9749a76c159cf4602b4acb703765f4ce3d14c9bf666fd49a91cd6637"
+      }
+    }
+  }
+  feature {
+    key: "image/object/bbox/xmax"
+    value {
+      float_list {
+        value: 0.3907163739204407
+        value: 0.9453582167625427
+        value: 0.8486841917037964
+        value: 0.7509137392044067
+        value: 0.7454313039779663
+        value: 0.6884137392044067
+        value: 0.46820175647735596
+        value: 0.4981725215911865
+        value: 0.7680920958518982
+      }
+    }
+  }
+  feature {
+    key: "image/object/bbox/xmin"
+    value {
+      float_list {
+        value: 0.32200291752815247
+        value: 0.8680555820465088
+        value: 0.7894737124443054
+        value: 0.7337353825569153
+        value: 0.7293494343757629
+        value: 0.6756213307380676
+        value: 0.45851609110832214
+        value: 0.4884868562221527
+        value: 0.7562134265899658
+      }
+    }
+  }
+  feature {
+    key: "image/object/bbox/ymax"
+    value {
+      float_list {
+        value: 0.2823464870452881
+        value: 0.1743421107530594
+        value: 0.11129385977983475
+        value: 0.765899121761322
+        value: 0.7853618264198303
+        value: 0.8610197305679321
+        value: 0.5740131735801697
+        value: 0.5320723652839661
+        value: 0.45148026943206787
+      }
+    }
+  }
+  feature {
+    key: "image/object/bbox/ymin"
+    value {
+      float_list {
+        value: 0.203125
+        value: 0.0742872804403305
+        value: 0.022752193734049797
+        value: 0.7450658082962036
+        value: 0.765899121761322
+        value: 0.8418311476707458
+        value: 0.5594846606254578
+        value: 0.5128837823867798
+        value: 0.4339364171028137
+      }
+    }
+  }
+  feature {
+    key: "image/object/class/label"
+    value {
+      int64_list {
+        value: 2
+        value: 2
+        value: 3
+        value: 4
+        value: 4
+        value: 4
+        value: 4
+        value: 4
+        value: 4
+      }
+    }
+  }
+  feature {
+    key: "image/object/class/text"
+    value {
+      bytes_list {
+        value: "truck"
+        value: "truck"
+        value: "c_vehicle"
+        value: "person"
+        value: "person"
+        value: "person"
+        value: "person"
+        value: "person"
+        value: "person"
+      }
+    }
+  }
+  feature {
+    key: "image/source_id"
+    value {
+      bytes_list {
+        value: "20MP_20221201143527.jpg"
+      }
+    }
+  }
+  feature {
+    key: "image/width"
+    value {
+      int64_list {
+        value: 5472
+      }
+    }
+  }
+
+================================================================
+  ## 以下はcar defect 
+
+  feature {
+    key: "image/filename"
+    value {
+      bytes_list {
+        value: "10.jpg"
+      }
+    }
+  }
+  feature {
+    key: "image/format"
+    value {
+      bytes_list {
+        value: "jpeg"
+      }
+    }
+  }
+  feature {
+    key: "image/height"
+    value {
+      int64_list {
+        value: 1024
+      }
+    }
+  }
+  feature {
+    key: "image/key/sha256"
+    value {
+      bytes_list {
+        value: "b14bdf8d0bb53b63dad2df115450400ac12828beeee34665d1d03eaa5f3c4478"
+      }
+    }
+  }
+  feature {
+    key: "image/object/area"
+    value {
+      float_list {
+        value: 695590.0
+      }
+    }
+  }
+  feature {
+    key: "image/object/bbox/xmax"
+    value {
+      float_list {
+        value: 0.861328125
+      }
+    }
+  }
+  feature {
+    key: "image/object/bbox/xmin"
+    value {
+      float_list {
+        value: 0.0029296875
+      }
+    }
+  }
+  feature {
+    key: "image/object/bbox/ymax"
+    value {
+      float_list {
+        value: 0.6640625
+      }
+    }
+  }
+  feature {
+    key: "image/object/bbox/ymin"
+    value {
+      float_list {
+        value: 0.0029296875
+      }
+    }
+  }
+  feature {
+    key: "image/object/class/text"
+    value {
+      bytes_list {
+        value: "door"
+      }
+    }
+  }
+  feature {
+    key: "image/object/is_crowd"
+    value {
+      int64_list {
+        value: 0
+      }
+    }
+  }
+  feature {
+    key: "image/object/mask"
+    value {
+      bytes_list {
+        value: ""//////
+      }
+    }
+  }
+  feature {
+    key: "image/source_id"
+    value {
+      bytes_list {
+        value: "0"
+      }
+    }
+  }
+  feature {
+    key: "image/width"
+    value {
+      int64_list {
+        value: 1024
+      }
+    }
+  }
+
+## 結論、carには以下があり、
+image/object/is_crowd", "image/object/mask 、"image/object/area
+むしろcreatedには以下がある。使いまわせはすると思う。
+"image/object/class/label"
+
+
+## 3つの比較
+
+coco
+"image/filename"、"image/id"、"objects/area"、"objects/bbox"、"objects/id"、"objects/is_crowd"、"objects/label"
+
+created
+"image/filename","image/format","image/height","image/key/sha256","image/object/bbox/xmax"."image/object/bbox/xmin","image/object/bbox/ymax","image/object/bbox/ymin","image/object/class/label","image/object/class/text","image/source_id","image/width"
+
+car defect
+"image/filename","image/format","image/height","image/key/sha256","image/object/area","image/object/bbox/xmax","image/object/bbox/xmin", "image/object/bbox/ymax", "image/object/bbox/ymin","image/object/class/text","image/object/is_crowd", "image/object/mask","image/source_id", "image/width"
