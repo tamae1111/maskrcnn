@@ -23,7 +23,7 @@ def getMLParamaters():
 
 
     result = DictDotNotation()
-    basePath = '/home/ec2-user/SageMaker/fasterRcnn/colab_frcnn'
+    basePath = '/home/ec2-user/SageMaker/maskrcnn'
     middle_path = "/custombdd"
     bdd_xml= basePath+ middle_path + "/xml"
     bdd_img= basePath+ middle_path + "/img"

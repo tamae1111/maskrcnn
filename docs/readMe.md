@@ -1,7 +1,7 @@
 ## ディレクトリ構造
 ./fasterRcnn
 └── Faster_R_CNN_ver_sagemaker.ipynb
-└── colab_frcnn
+└── mask_frcnn
     ├── custombdd 
     │   ├── img
     │   ├── test
@@ -19,7 +19,7 @@
 
 ### 以下ディレクトリに訓練用のファイル群を格納し、トレーニングを実施する。
 ./fasterRcnn
-└── colab_frcnn
+└── mask_frcnn
     └── custombdd 
         ├── img
         ├── test

@@ -10,7 +10,7 @@ class moveTrain_Test(unittest.TestCase):
         moveTrain.deleteYoloSubObjects(path)
 
     def test_deleteXMLSubObjects(self):
-        path = "/Users/tamae/Library/CloudStorage/GoogleDrive-tamae@iret.co.jp/マイドライブ/MachineL/fasterRcnn/colab_frcnn/custombdd"
+        path = "/Users/tamae/Library/CloudStorage/GoogleDrive-tamae@iret.co.jp/マイドライブ/MachineL/fasterRcnn/maskfrcnn/custombdd"
         moveTrain.deleteXMLSubObjects(path)
 
     def test_moveYoloFiles(self):
