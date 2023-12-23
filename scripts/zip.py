@@ -1,7 +1,9 @@
 import shutil
 
-zipName = "zipedFiles"
-pathName = "path"
+zipName = "zipedFile"
+pathName = "/Users/tamae/gitdir/maskrcnn/custombdd/img"
+
+# e.g. /home/ec2-user/SageMaker/fasterRcnn/colab_frcnn/custombdd/img
 
 def makeZipFile(zip_name,path):
     shutil.make_archive(zip_name, 'zip', root_dir=path)
