@@ -3,14 +3,12 @@ FROM ubuntu:latest
 
 # timezone setting
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update &amp;amp;amp;amp;&amp;amp;amp;amp; apt-get install -y tzdata
+RUN apt-get update && apt-get install -y tzdata
 RUN apt update
 RUN apt install -y libopencv-dev
 
 ENV TZ=Asia/Tokyo
 ENV PATH="/opt/program:${PATH}"
-
-
 
 
 RUN chmod +x /opt/ml/code/train.py # trainファイルに実行権限を付与する
