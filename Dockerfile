@@ -34,4 +34,4 @@ COPY . /
 # trainファイルに実行権限を付与する
 # RUN chmod +x /opt/ml/code/train.py
 
-ENV SAGEMAKER_PROGRAM ../sagemaker_entry_point.py
+ENV SAGEMAKER_PROGRAM sagemaker_entry_point.py
