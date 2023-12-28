@@ -26,7 +26,7 @@ RUN pip3 install matplotlib
 # Pipfileなどをコンテナ内にコピー
 # COPY . /
 
-
+COPY . /opt/ml/code
 WORKDIR /opt/ml/code
 # COPY init /opt/init
 
