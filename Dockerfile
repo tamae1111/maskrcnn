@@ -8,9 +8,9 @@ RUN apt update
 RUN apt install -y libopencv-dev
 
 ENV TZ=Asia/Tokyo
-ENV PATH="/opt/program:${PATH}"
 
-# WORKDIR /opt/ml/code
+# これいるかあやしいけど、ひとまず残しておく
+ENV PATH="/opt/program:${PATH}"
 
 RUN apt-get install tzdata libturbojpeg python3-tk python3-pip libsm6 libxrender1 libxext-dev -y
 
@@ -24,16 +24,12 @@ RUN pip3 install opencv-python
 RUN pip3 install matplotlib
 
 # Pipfileなどをコンテナ内にコピー
-# COPY . /
-
 COPY . /opt/ml/code
+
+# 作業ディレクトリを設定
 WORKDIR /opt/ml/code
-# COPY init /opt/init
 
-# pipenvを使ってPipfileに書いてあるライブラリをインストール
-# RUN pipenv install --skip-lock
-
-# trainファイルに実行権限を付与する
+# trainファイルに実行権限を付与するが、今んとこ不要なのでコメントアウト
 # RUN chmod +x /opt/ml/code/train.py
 
 ENV SAGEMAKER_PROGRAM sagemaker_entry_point.py
