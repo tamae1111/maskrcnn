@@ -1,3 +1,8 @@
+## build_and_push.shの用途
+これはdockerコンテナを作成するためのただの便利スクリプト。
+以下のコマンドで代替してもいい。
+gitのルートディレクトリから実行する
+
 ```
 まずは普通にDockerFileを作成し、Dockerにbuildします。
 docker build -t test:latest .
@@ -18,3 +23,5 @@ docker push 958305726855.dkr.ecr.ap-northeast-1.amazonaws.com/test:latest
 できたものをsagemakerのimageタグで使えばいい
 多分以下
 958305726855.dkr.ecr.ap-northeast-1.amazonaws.com/test:latest
+
+

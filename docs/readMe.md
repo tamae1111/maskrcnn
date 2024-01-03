@@ -46,3 +46,6 @@ test_trimming43DirectAllを実行して、画像を増加させる。
 Faster_R_CNN_ver_sagemaker_moduled.ipynb
 を実行する
 ※中ではmoudlesのライブラリを読み込み、trainなどを実行
+
+
+
