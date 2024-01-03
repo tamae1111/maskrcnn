@@ -3,31 +3,25 @@
 
 
 ## ディレクトリ構造
-./fasterRcnn
-└── Faster_R_CNN_ver_sagemaker.ipynb
-└── mask_frcnn
-    ├── custombdd 
-    │   ├── img
-    │   ├── test
-    │   └── xml
-    └── smallbdd　
-        ├── img
-        ├── test
-        └── xml
+maskrcnn
+├── Faster_R_CNN_ver_sagemaker.ipynb
+└── custombdd 
+    ├── img
+    ├── test
+    └── xml
 
 ## 以下使用ディレクトリ解説
 
 ### 基本的な実行ファイル(訓練、モデル保存)
-./fasterRcnn
+maskrcnn
 └── Faster_R_CNN_ver_sagemaker.ipynb
 
 ### 以下ディレクトリに訓練用のファイル群を格納し、トレーニングを実施する。
-./fasterRcnn
-└── mask_frcnn
-    └── custombdd 
-        ├── img
-        ├── test
-        └── xml
+maskrcnn
+└── custombdd 
+    ├── img
+    ├── test
+    └── xml
 
 ## 使用ラベリングツール
 labelImg

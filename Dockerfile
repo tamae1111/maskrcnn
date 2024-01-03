@@ -32,4 +32,6 @@ WORKDIR /opt/ml/code
 # trainファイルに実行権限を付与するが、今んとこ不要なのでコメントアウト
 # RUN chmod +x /opt/ml/code/train.py
 
+
+# SM_NUM_GPUSなどのSageMakerの作成する環境変数を体良く取り込むために、SAGEMAKER_PROGRAMという環境変数を使う
 ENV SAGEMAKER_PROGRAM sagemaker_entry_point.py
