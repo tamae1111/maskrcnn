@@ -1,3 +1,7 @@
+## 実施時期
+2024/01/03
+
+
 ## ディレクトリ構造
 ./fasterRcnn
 └── Faster_R_CNN_ver_sagemaker.ipynb
