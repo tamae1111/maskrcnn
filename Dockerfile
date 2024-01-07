@@ -23,6 +23,11 @@ RUN pip3 install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 -f https://d
 RUN pip3 install opencv-python
 RUN pip3 install matplotlib
 
+# ディレクトリ構造のデバッグのためのinstall
+RUN pip3 install pathlib
+# ディレクトリ構造のデバッグのためのinstall
+RUN pip3 install glob2
+
 # Pipfileなどをコンテナ内にコピー
 COPY . /opt/ml/code
 

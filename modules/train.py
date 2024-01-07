@@ -4,7 +4,7 @@ from modules.MLparamaters import getMLParamaters
 
 from modules.fasterRcnn import model_custom,customDataloader
 import numpy as np
-import smallTask
+from modules.smallTask import printFileCount,printTree
  
 paramaters = getMLParamaters()
 
@@ -14,8 +14,9 @@ def train():
 
     two_dir=[paramaters.bdd_xml,paramaters.bdd_img]
 
-    smallTask.printFileCount(paramaters.bdd_xml)
-    smallTask.printFileCount(paramaters.bdd_img)
+    printFileCount(paramaters.bdd_xml)
+    printFileCount(paramaters.bdd_img)
+    printTree("/opt/ml")
 
     train_dataloader = customDataloader(two_dir,paramaters.dataset_class,paramaters.batch_size,paramaters.scale)
     
