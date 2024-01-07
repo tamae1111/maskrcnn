@@ -81,7 +81,7 @@ def output_fn(prediction, accept=JSON_CONTENT_TYPE):
 
 def _train(args):
     print("args is",args)
-    # train()
+    train()
 
 def model_fn(model_path):
     print("model_path is",model_path)
