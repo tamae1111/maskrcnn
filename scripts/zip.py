@@ -19,9 +19,7 @@ def zip_images(folder_path, zip_filename):
     print(f'画像ファイルを"{zip_filename}"に圧縮しました。')
 
 # フォルダのパスとZipファイル名を指定して呼び出し
-# folder_path = '/Users/tamae/gitdir/maskrcnn/custombdd/img'
-# zip_filename = 'images.zip'
-# zip_images(folder_path, zip_filename)
+# 
 
 
 def zip_xmls(folder_path, zip_filename):
@@ -36,6 +34,18 @@ def zip_xmls(folder_path, zip_filename):
 
     print(f'画像ファイルを"{zip_filename}"に圧縮しました。')
 
-folder_path = '/home/ec2-user/SageMaker/fasterRcnn/colab_frcnn/custombdd//xml'
-zip_filename = 'xmls.zip'
-zip_xmls(folder_path, zip_filename)
+
+def do_img():
+    folder_path = '/home/ec2-user/SageMaker/maskrcnn/custombdd/img'
+    zip_filename = 'images.zip'
+    zip_images(folder_path, zip_filename)
+
+def do_xml():
+    folder_path = '/home/ec2-user/SageMaker/maskrcnn/custombdd/xml'
+    zip_filename = 'xmls.zip'
+    zip_xmls(folder_path, zip_filename)
+
+
+
+if __name__ == '__main__':
+    do_img()
