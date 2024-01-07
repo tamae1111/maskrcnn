@@ -48,7 +48,7 @@ input_fn、model_fnを参考にほぼコピペで要素だけ入れ替えてあ�
 ①input_fnはコピペ。
 
 ②model_fnの中身は以下。
-use_model=torch.load(paramaters.path+'/models/model.pt')
+use_model=torch.load(paramaters.model_path)
 return use_model
 
 ③predict_fn の中身も引数のmodelでmakeInferenceImageを使うように書き換えてあげればoK

@@ -65,4 +65,5 @@ def train():
             
         #Epochごとのlossの保存
         loss_list.append(np.mean(loss_epo))
-        torch.save(model_c, paramaters.path+'/models/model.pt')
+        torch.save(model_c, paramaters.model_path)
+    
