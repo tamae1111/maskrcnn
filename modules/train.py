@@ -14,9 +14,10 @@ def train():
 
     two_dir=[paramaters.bdd_xml,paramaters.bdd_img]
 
+    printTree("/opt/ml")
     printFileCount(paramaters.bdd_xml)
     printFileCount(paramaters.bdd_img)
-    printTree("/opt/ml")
+
 
     train_dataloader = customDataloader(two_dir,paramaters.dataset_class,paramaters.batch_size,paramaters.scale)
     

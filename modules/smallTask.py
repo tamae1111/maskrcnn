@@ -4,10 +4,10 @@ import glob
 
 def printFileCount(dir):
     initial_count = 0
+    print("in printFileCount")
     for path in os.listdir(dir):
         if os.path.isfile(os.path.join(dir, path)):
             initial_count += 1
-    print("in printFileCount")
     print("file count is",initial_count)
     print("in dir ",dir)
 
