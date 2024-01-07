@@ -33,10 +33,9 @@ def getMLParamaters():
     if useS3:
         # sagemakerの環境変数から取得
         input_data_dir = os.environ.get('SM_CHANNEL_TRAINING')
-        middle_path = "/custombdd"
-        bdd_xml= input_data_dir+ middle_path + "/xml"
-        bdd_img= input_data_dir+ middle_path + "/img"
-        test_path= input_data_dir+ middle_path + "/test"
+        bdd_xml= input_data_dir + "/xml"
+        bdd_img= input_data_dir + "/img"
+        test_path= input_data_dir + "/test"
         model_path = os.environ.get('SM_MODEL_DIR') + "/model.pt"
         # "/opt/ml/model"
         print("input_data_dir is",input_data_dir)
