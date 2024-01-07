@@ -26,8 +26,9 @@ def getMLParamaters():
     result = DictDotNotation()
 
 
-    # s3を使う場合はこのフラグをTrueにする
-    useS3:bool = True
+    # sagemakerの環境変数を支える場合は、s3も使うため、連動してこのフラグをTrueにする
+    useS3:bool = bool(os.environ.get('SM_CHANNEL_TRAINING'))
+    print("useS3 is",useS3)
 
     if useS3:
         # sagemakerの環境変数から取得
