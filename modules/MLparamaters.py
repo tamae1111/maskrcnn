@@ -39,6 +39,8 @@ def getMLParamaters():
         test_path= input_data_dir+ middle_path + "/test"
         model_path = os.environ.get('SM_MODEL_DIR') + "/model.pt"
         # "/opt/ml/model"
+        print("input_data_dir is",input_data_dir)
+
 
     else:
         basePath = '/home/ec2-user/SageMaker/maskrcnn'
@@ -49,7 +51,6 @@ def getMLParamaters():
         model_path = basePath +'/models/model.pt'
 
     # debug print
-    print("input_data_dir is",input_data_dir)
     print("bdd_xml is",bdd_xml)
     print("bdd_img is",bdd_img)
     print("test_path is",test_path)
