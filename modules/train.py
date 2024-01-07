@@ -4,6 +4,7 @@ from modules.MLparamaters import getMLParamaters
 
 from modules.fasterRcnn import model_custom,customDataloader
 import numpy as np
+import smallTask
  
 paramaters = getMLParamaters()
 
@@ -13,8 +14,11 @@ def train():
 
     two_dir=[paramaters.bdd_xml,paramaters.bdd_img]
 
+    smallTask.printFileCount(paramaters.bdd_xml)
+    smallTask.printFileCount(paramaters.bdd_img)
+
     train_dataloader = customDataloader(two_dir,paramaters.dataset_class,paramaters.batch_size,paramaters.scale)
-    print("customDataloader is",customDataloader)
+    
 
     # ここ運ゲーでバグることがあるが、def model_custom ():のコードを実行などして再実行すると通ることがある。
     # もしかしたら名前が悪いかもしれないので変えたら治るかも　

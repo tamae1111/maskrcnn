@@ -92,6 +92,7 @@ def customDataloader (two_dir,dataset_class,batch_size,scale=720):
     xml_dir=two_dir[0]
     image_dir=two_dir[1]
     dataset = MyDataset(image_dir,xml_dir,scale,dataset_class)
+    print("dataset in customDataloader is",dataset)
 
     #データのロード
     torch.manual_seed(2020)
