@@ -50,10 +50,21 @@ def printTorchVersions():
     import torchaudio
     import torchvision
     import torchtext
+
+    print("printTorchVersions start")
     print(torch.__version__)
     print(torchaudio.__version__)
     print(torchvision.__version__)
     print(torchtext.__version__)
+
+    print("torch.cuda.is_available()",torch.cuda.is_available())
+    print("torch.version.cuda",torch.version.cuda)
+    print("torch.cuda.device_count()",torch.cuda.device_count())
+    print("torch.cuda.get_device_capability()",torch.cuda.get_device_capability())
+    print("torch.cuda.get_device_name()",torch.cuda.get_device_name())
+    print("torch.backends.cudnn.is_available()",torch.backends.cudnn.is_available())
+
+    print("torch.backends.cudnn.version()",torch.backends.cudnn.version())
 
 def printIsAvailableTorchCuda():
     '''
