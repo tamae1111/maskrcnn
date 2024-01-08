@@ -4,12 +4,14 @@ from modules.MLparamaters import getMLParamaters
 
 from modules.fasterRcnn import model_custom,customDataloader
 import numpy as np
-from modules.smallTask import printFileCount,printTree
+from modules.smallTask import printFileCount,printTree,printIsAvailableTorchCuda
  
 paramaters = getMLParamaters()
 
 # トレーニング実行の処理
 def train():
+    printIsAvailableTorchCuda()
+
     divice = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu') 
 
     two_dir=[paramaters.bdd_xml,paramaters.bdd_img]

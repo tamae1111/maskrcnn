@@ -1,6 +1,7 @@
 import os
 import pathlib
 import glob
+import torch
 
 def printFileCount(dir):
     initial_count = 0
@@ -42,6 +43,13 @@ def printTree(path, layer=0, is_last=False, indent_current='　'):
             printTree(p, layer=layer+1, is_last=is_last_path(i), indent_current=indent_lower)
 
 
+def printIsAvailableTorchCuda():
+    '''
+    cudaが有効かのprint
+    nvidiaドライバー、cuda、torchで相互に有効なバージョンを使用する必要がある
+    '''
+    print("torch.cuda.is_available() is \n",torch.cuda.is_available())
+
 if __name__ == '__main__':
     dir = "./"
-    printTree(dir)
+    printIsAvailableTorchCuda()
