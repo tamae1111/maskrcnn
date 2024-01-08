@@ -28,7 +28,6 @@ def getMLParamaters():
 
     # sagemakerの環境変数を支える場合は、s3も使うため、連動してこのフラグをTrueにする
     useS3:bool = bool(os.environ.get('SM_CHANNEL_TRAINING'))
-    print("useS3 is",useS3)
 
     if useS3:
         # sagemakerの環境変数から取得
@@ -38,7 +37,6 @@ def getMLParamaters():
         test_path= input_data_dir + "/test"
         model_path = os.environ.get('SM_MODEL_DIR') + "/model.pt"
         # "/opt/ml/model"
-        print("input_data_dir is",input_data_dir)
 
 
     else:
@@ -49,11 +47,6 @@ def getMLParamaters():
         test_path= basePath+ middle_path + "/test"
         model_path = basePath +'/models/model.pt'
 
-    # debug print
-    print("bdd_xml is",bdd_xml)
-    print("bdd_img is",bdd_img)
-    print("test_path is",test_path)
-    print("model_path is",model_path)
 
 
     dataset_class = ['person','vehicle','c_vehicle2','c_vehicle3','tank_lorry','truck','c_vehicle','c_vehicle4']
@@ -78,4 +71,10 @@ def getMLParamaters():
     result["divice"] = divice
     result["useS3"] = useS3
 
+    print("paramaters are\n",result.items())
+
     return result
+
+
+if __name__ == '__main__':
+    getMLParamaters()
