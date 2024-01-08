@@ -19,7 +19,6 @@ RUN pip3 install --upgrade setuptools
 RUN pip3 install sagemaker-training
 
 # pytorchをインストール
-RUN pip3 install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 -f https://download.pytorch.org/whl/torch_stable.html
 RUN pip3 install opencv-python
 RUN pip3 install matplotlib
 
@@ -27,6 +26,13 @@ RUN pip3 install matplotlib
 RUN pip3 install pathlib
 # ディレクトリ構造のデバッグのためのinstall
 RUN pip3 install glob2
+
+
+# 一旦以下エラーが出たのでバージョンを下げてみるRuntimeError: No HIP GPUs are available
+# RUN pip3 install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 -f https://download.pytorch.org/whl/torch_stable.html
+
+RUN pip3 install torch==2.0.1 torchvision==0.16.2 torchaudio==2.1.2 -f https://download.pytorch.org/whl/torch_stable.html
+
 
 # Pipfileなどをコンテナ内にコピー
 COPY . /opt/ml/code
