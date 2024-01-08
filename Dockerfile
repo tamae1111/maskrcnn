@@ -24,10 +24,8 @@ RUN pip3 install sagemaker-training matplotlib
 
 # ディレクトリ構造のデバッグのためのinstall
 RUN pip3 install pathlib glob2
-
 # pytorchをインストール
-RUN pip3 install torch==2.0.1 
-RUN pip3 install torchvision torchaudio
+RUN pip3 install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118
 
 # 一旦以下エラーが出たのでバージョンを下げてみるRuntimeError: No HIP GPUs are available
 # RUN pip3 install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 -f https://download.pytorch.org/whl/torch_stable.html
