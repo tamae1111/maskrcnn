@@ -3,6 +3,9 @@ import pathlib
 import glob
 import torch
 
+
+
+
 def printFileCount(dir):
     initial_count = 0
     print("in printFileCount")
@@ -13,6 +16,7 @@ def printFileCount(dir):
     print("in dir ",dir)
 
 def printTree(path, layer=0, is_last=False, indent_current='　'):
+    print("printTree start")
     if not pathlib.Path(path).is_absolute():
         path = str(pathlib.Path(path).resolve())
 
@@ -42,6 +46,14 @@ def printTree(path, layer=0, is_last=False, indent_current='　'):
         if os.path.isdir(p):
             printTree(p, layer=layer+1, is_last=is_last_path(i), indent_current=indent_lower)
 
+def printTorchVersions():
+    import torchaudio
+    import torchvision
+    import torchtext
+    print(torch.__version__)
+    print(torchaudio.__version__)
+    print(torchvision.__version__)
+    print(torchtext.__version__)
 
 def printIsAvailableTorchCuda():
     '''

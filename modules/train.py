@@ -44,11 +44,11 @@ def train():
 
     loss_list=[]
 
-    print("train_dataloader",train_dataloader)
+    print("train_dataloader is\n",train_dataloader)
     for epoch in range(num_epochs):
         loss_epo=[]
     
-        # model_c.train()#これから学習しますよ
+        # model_c.train()#これから学習開始
         for i, batch in enumerate(train_dataloader):
     
             images, targets,_ = batch #####　batchはそのミニバッジのimage、tagets,image_idsが入ってる
