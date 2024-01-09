@@ -9,7 +9,6 @@ from PIL import Image
 from glob import glob
 import xml.etree.ElementTree as ET 
 
-
 # @profile
 class MyDataset(torch.utils.data.Dataset):
     
