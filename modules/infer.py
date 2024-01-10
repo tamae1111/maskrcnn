@@ -24,7 +24,17 @@ data_class.insert(0, "__background__")
 classes = tuple(data_class)
 
 # detection box　を図字するメソッド
-def testShowInferenceImage(use_model):
+def testShowInferenceImage(use_model_path):
+    
+    def get_torch_model(file_name):
+        if torch.cuda.is_available():
+            return torch.load(file_name) 
+        else:
+            return torch.load(file_name, torch.device('cpu')) 
+
+
+    use_model = get_torch_model(use_model_path)
+
     logger.info('START testShowInferenceImage')
     logger.info(f'type: {type(use_model)}')
     use_model.to(paramaters.device)
@@ -39,6 +49,7 @@ def testShowInferenceImage(use_model):
         plt.imshow(img)
 
     plt.show()
+
 
 
 def getProcessedImage(img:np.ndarray,use_model):
