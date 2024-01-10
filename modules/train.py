@@ -12,7 +12,7 @@ paramaters = getMLParamaters()
 def train():
     printIsAvailableTorchCuda()
 
-    device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu') 
+    device = paramaters.device
 
     two_dir=[paramaters.bdd_xml,paramaters.bdd_img]
 

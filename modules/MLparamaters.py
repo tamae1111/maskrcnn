@@ -4,16 +4,7 @@ import os
 def getMLParamaters():
     '''
     return \n
-    result["path"]\n
-    result["test_path"]\n
-    result["bdd_img"]\n
-    result["bdd_xml"]\n
-    result["dataset_class"]\n
-    result["colors"]\n
-    result["epochs"]\n
-    result["batch_size"]\n
-    result["scale"]\n
-    result["device"]\n
+    dict_items([('model_path', '/*****/model.pt'), ('test_path', '/*****/custombdd/test'), ('bdd_img', '/*****/custombdd/img'), ('bdd_xml', '/****/custombdd/xml'), ('dataset_class', ['person', 'vehicle', 'c_vehicle2', 'c_vehicle3', 'tank_lorry', 'truck', 'c_vehicle', 'c_vehicle4']), ('colors', ((0, 0, 0), (255, 0, 0), (0, 255, 0), (0, 0, 255), (100, 255, 100), (100, 100, 255), (255, 255, 0), (255, 0, 255), (0, 255, 255))), ('epochs', 20), ('batch_size', 4), ('scale', 1024), ('device', device(type='cuda')), ('useS3', False)])
     '''
 
     #ドットアクセス用の自作クラス
@@ -26,7 +17,7 @@ def getMLParamaters():
     result = DictDotNotation()
 
     # sagemakerの環境変数を支える場合は、s3も使うため、連動してこのフラグをTrueにする
-    isCUDAAvailable:bool =  torch.cuda.is_available()
+    canUseCUDA:bool =  torch.cuda.is_available()
 
     useS3:bool = bool(os.environ.get('SM_CHANNEL_TRAINING'))
 
@@ -41,7 +32,7 @@ def getMLParamaters():
         # "/opt/ml/model"
 
     # notebookインスタンスの場合
-    elif isCUDAAvailable:
+    elif canUseCUDA:
         basePath = '/home/ec2-user/SageMaker/maskrcnn'
         middle_path = "/custombdd"
         bdd_xml= basePath+ middle_path + "/xml"
@@ -63,7 +54,7 @@ def getMLParamaters():
     dataset_class = ['person','vehicle','c_vehicle2','c_vehicle3','tank_lorry','truck','c_vehicle','c_vehicle4']
     colors = ((0,0,0),(255,0,0),(0,255,0),(0,0,255),(100,255,100),(100,100,255),(255,255,0),(255,0,255),(0,255,255))
 
-    device = torch.device('cuda') if isCUDAAvailable else torch.device('cpu') 
+    device = torch.device('cuda') if canUseCUDA else torch.device('cpu') 
 
     #ハイパーパラメータの指定
     epochs = 20
