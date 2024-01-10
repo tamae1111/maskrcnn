@@ -13,7 +13,7 @@ def getMLParamaters():
     result["epochs"]\n
     result["batch_size"]\n
     result["scale"]\n
-    result["divice"]\n
+    result["device"]\n
     '''
 
     #ドットアクセス用の自作クラス
@@ -63,7 +63,7 @@ def getMLParamaters():
     dataset_class = ['person','vehicle','c_vehicle2','c_vehicle3','tank_lorry','truck','c_vehicle','c_vehicle4']
     colors = ((0,0,0),(255,0,0),(0,255,0),(0,0,255),(100,255,100),(100,100,255),(255,255,0),(255,0,255),(0,255,255))
 
-    divice = torch.device('cuda') if isCUDAAvailable else torch.device('cpu') 
+    device = torch.device('cuda') if isCUDAAvailable else torch.device('cpu') 
 
     #ハイパーパラメータの指定
     epochs = 20
@@ -79,7 +79,7 @@ def getMLParamaters():
     result["epochs"] = epochs
     result["batch_size"] = batch_size
     result["scale"] = scale
-    result["divice"] = divice
+    result["device"] = device
     result["useS3"] = useS3
 
     print("paramaters are\n",result.items())

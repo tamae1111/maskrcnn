@@ -12,7 +12,7 @@ paramaters = getMLParamaters()
 def train():
     printIsAvailableTorchCuda()
 
-    divice = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu') 
+    device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu') 
 
     two_dir=[paramaters.bdd_xml,paramaters.bdd_img]
 
@@ -53,8 +53,8 @@ def train():
     
             images, targets,_ = batch #####　batchはそのミニバッジのimage、tagets,image_idsが入ってる
             
-            images = list(image.to(divice) for image in images)
-            targets = [{k: v.to(divice) for k, v in t.items()} for t in targets]
+            images = list(image.to(device) for image in images)
+            targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
             
             ##学習モードでは画像とターゲット（ground-truth）を入力する
             ##返り値はdict[tensor]でlossが入ってる。（RPNとRCNN両方のloss）

@@ -27,7 +27,7 @@ classes = tuple(data_class)
 def testShowInferenceImage(use_model):
     logger.info('START testShowInferenceImage')
     logger.info(f'type: {type(use_model)}')
-    use_model.to(paramaters.divice)
+    use_model.to(paramaters.device)
     use_model.eval() # dropoutやbatch normの on/off
     
     for imgfile in sorted(glob.glob(paramaters.test_path+'/*')): # テストフォルダにある画像分ループ実行
@@ -50,7 +50,7 @@ def getProcessedImage(img:np.ndarray,use_model):
     image_tensor = torchvision.transforms.functional.to_tensor(img)
 
     with torch.no_grad():
-        prediction = use_model([image_tensor.to(paramaters.divice)]) # ここで予測結果がpredictionに格納される
+        prediction = use_model([image_tensor.to(paramaters.device)]) # ここで予測結果がpredictionに格納される
 
     img = getLabelAddedImage(img,prediction[0])
 
@@ -94,7 +94,7 @@ def getLabelAddedImage(img,prediction_first):
 
 # 特定のラベルのカウント数を画像に添付して表示するメソッド
 def makeAddedSpecificCount(use_model):
-    use_model.to(paramaters.divice)
+    use_model.to(paramaters.device)
     use_model.eval() # dropoutやbatch normの on/off
     default_x_position = 50
     
@@ -109,7 +109,7 @@ def makeAddedSpecificCount(use_model):
         image_tensor = torchvision.transforms.functional.to_tensor(img)
 
         with torch.no_grad():
-            prediction = use_model([image_tensor.to(paramaters.divice)]) # ここで予測結果がpredictionに格納される
+            prediction = use_model([image_tensor.to(paramaters.device)]) # ここで予測結果がpredictionに格納される
 
         for i,box in enumerate(prediction[0]['boxes']): # 以降1イメージ内の検出されたラベル数分ループ処理
             score = prediction[0]['scores'][i].cpu().numpy()
