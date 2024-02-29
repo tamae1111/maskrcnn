@@ -9,9 +9,6 @@ RUN apt install -y libopencv-dev
 
 ENV TZ=Asia/Tokyo
 
-# これいるかあやしいけど、ひとまず残しておく
-ENV PATH="/opt/program:${PATH}"
-
 RUN apt-get install tzdata libturbojpeg python3-tk python3-pip libsm6 libxrender1 libxext-dev -y
 
 RUN pip3 install --upgrade pip
@@ -30,6 +27,8 @@ RUN pip3 install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url 
 # 一旦以下エラーが出たのでバージョンを下げてみるRuntimeError: No HIP GPUs are available
 # RUN pip3 install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 -f https://download.pytorch.org/whl/torch_stable.html
 
+# これいるかあやしいけど、ひとまず残しておく。一旦消してみる
+# ENV PATH="/opt/program:${PATH}"
 
 # Pipfileなどをコンテナ内にコピー
 COPY . /opt/ml/code

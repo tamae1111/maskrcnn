@@ -77,6 +77,12 @@ def printIsAvailableTorchCuda():
     '''
     print("torch.cuda.is_available() is \n",torch.cuda.is_available())
 
+def printEnviron():
+    print("printEnviron start ======")
+    for key, value in os.environ.items():
+        print(f'{key}: {value}')
+    print("printEnviron finish ======")
+
 if __name__ == '__main__':
     dir = "./"
     printIsAvailableTorchCuda()
