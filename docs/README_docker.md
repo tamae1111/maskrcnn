@@ -5,7 +5,7 @@ gitのルートディレクトリから実行する
 
 ```
 まずは普通にDockerFileを作成し、Dockerにbuildします。
-docker build -t test:latest .
+docker build -t test:latest --platform linux/x86_64 .
 
 次にECRのレポジトリを作ります。
 aws ecr create-repository --repository-name test --region ap-northeast-1
