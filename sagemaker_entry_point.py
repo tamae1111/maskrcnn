@@ -96,8 +96,10 @@ def model_fn(model_path):
         return json.dumps(str(e)), model_path
 
 def printEnviron():
+    print("printEnviron start ======")
     for key, value in os.environ.items():
         print(f'{key}: {value}')
+    print("printEnviron finish ======")
 
 if __name__ == '__main__':
     printEnviron()
