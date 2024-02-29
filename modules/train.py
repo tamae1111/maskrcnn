@@ -16,7 +16,12 @@ def train():
 
     two_dir=[paramaters.bdd_xml,paramaters.bdd_img]
 
+    # /opt/mlの中身調査
     printTree("/opt/ml")
+
+     # /opt/programの中身調査
+    printTree("/opt/program")
+
     printFileCount(paramaters.bdd_xml)
     printFileCount(paramaters.bdd_img)
 
