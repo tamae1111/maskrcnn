@@ -16,7 +16,11 @@ def printFileCount(dir):
     print("in dir ",dir)
 
 def printTree(path, layer=0, is_last=False, indent_current='　'):
-    print("printTree start")
+
+    # 再起処理の最初だけ表示
+    if layer == 0:
+        print("printTree start")
+    
     if not pathlib.Path(path).is_absolute():
         path = str(pathlib.Path(path).resolve())
 
