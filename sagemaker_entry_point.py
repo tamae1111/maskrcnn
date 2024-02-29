@@ -95,7 +95,12 @@ def model_fn(model_path):
         print(e)
         return json.dumps(str(e)), model_path
 
+def printEnviron():
+    for key, value in os.environ.items():
+        print(f'{key}: {value}')
+
 if __name__ == '__main__':
+    printEnviron()
     parser = argparse.ArgumentParser()
 
     # Data and model checkpoints directories
