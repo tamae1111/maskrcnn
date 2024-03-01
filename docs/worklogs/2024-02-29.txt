@@ -1,2 +1,10 @@
+1
 ここまでうまくいっていた。
 トライアルとしてdockerignoreファイルを作って、custombddファイルを除外
+↓
+うまくいった
+
+2
+ENV PATH="/opt/program:${PATH}"
+を消してみた
+↓
