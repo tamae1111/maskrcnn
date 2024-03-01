@@ -7,7 +7,7 @@ from modules.train import train
 from modules.MLparamaters import getMLParamaters
 from modules.infer import getProcessedImage
 
-from modules.smallTask import printEnviron
+from modules.smallTask import printEnviron,printTree
 
 import os
 import sys
@@ -18,7 +18,9 @@ import logging
 
 
 print("print test 000")
-print("os.getcwd() is ",os.getcwd())
+currentDir = os.getcwd()
+print("os.getcwd() is ",currentDir)
+printTree(currentDir)
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
