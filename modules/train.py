@@ -18,9 +18,6 @@ def train():
 
     # /opt/mlの中身調査
     printTree("/opt/ml")
-
-    # /opt/programの中身調査
-    printTree("/opt/program")
     print("source_dir_test")
 
     printFileCount(paramaters.bdd_xml)
