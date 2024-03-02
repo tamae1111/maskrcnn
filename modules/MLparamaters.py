@@ -54,7 +54,7 @@ class paramaterClass:
     device = torch.device('cuda') if canUseCUDA else torch.device('cpu') 
 
     #ハイパーパラメータの指定
-    epochs = 20
+    epochs = 4
     batch_size = 4
     scale = 1024 #画像のスケール設定(縦の大きさを入力)
 
