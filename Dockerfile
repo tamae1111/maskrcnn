@@ -31,7 +31,7 @@ RUN pip3 install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url 
 COPY . /opt/ml/code
 
 # 作業ディレクトリを設定
-WORKDIR /opt/ml/code
+# WORKDIR /opt/ml/code
 
 
 # SM_NUM_GPUSなどのSageMakerの作成する環境変数を体良く取り込むために、SAGEMAKER_PROGRAMという環境変数を使う
