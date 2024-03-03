@@ -29,4 +29,5 @@ COPY . /opt/ml/code
 
 
 # SM_NUM_GPUSなどのSageMakerの作成する環境変数を体良く取り込むために、SAGEMAKER_PROGRAMという環境変数を使う
+# またこれによってSDK実行時にentrypointの設定を引数でしなくても済むようになる
 ENV SAGEMAKER_PROGRAM sagemaker_entry_point.py
