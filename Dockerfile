@@ -24,14 +24,8 @@ RUN pip3 install pathlib glob2
 # pytorchをインストール
 RUN pip3 install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118
 
-# これいるかあやしいけど、ひとまず残しておく。一旦消してみる
-# ENV PATH="/opt/program:${PATH}"
-
 # Pipfileなどをコンテナ内にコピー
 COPY . /opt/ml/code
-
-# 作業ディレクトリを設定
-# WORKDIR /opt/ml/code
 
 
 # SM_NUM_GPUSなどのSageMakerの作成する環境変数を体良く取り込むために、SAGEMAKER_PROGRAMという環境変数を使う
