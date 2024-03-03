@@ -1,6 +1,5 @@
 FROM ubuntu:latest
 
-
 # timezone setting
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
