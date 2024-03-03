@@ -1,10 +1,10 @@
 import torch
 
-from modules.MLparamaters import getMLParamaters
+from .MLparamaters import getMLParamaters
+from .fasterRcnn import model_custom,customDataloader
+from .smallTask import printFileCount,printTree,printIsAvailableTorchCuda
 
-from modules.fasterRcnn import model_custom,customDataloader
 import numpy as np
-from modules.smallTask import printFileCount,printTree,printIsAvailableTorchCuda
  
 paramaters = getMLParamaters()
 

@@ -6,7 +6,7 @@ import cv2
 import glob
 import matplotlib.pyplot as plt
 import copy
-from modules.MLparamaters import getMLParamaters
+from .MLparamaters import getMLParamaters
 import numpy as np
 import logging
 import sys
